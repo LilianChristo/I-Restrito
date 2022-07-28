@@ -1,0 +1,27 @@
+#navbar{
+  margin-right: 400px;
+}
+#itens{
+  color: #334746;
+
+}
+#traco{
+  font-weight: bold;
+}
+#login{
+  font-weight: bold;
+ color: #3D6157;
+}
+#cadastre-se{
+  margin-left: 20px;
+  margin-top:5px;
+  background: #D8AA76;
+  opacity: 0.5;
+  border: 1px solid #3D6157;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  position: relative;
+  width:120px ;
+
+
+}
