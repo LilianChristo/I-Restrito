@@ -1,0 +1,120 @@
+.topo{
+
+   
+    position: relative;
+    text-align: center;
+}
+
+.img{
+    border: 8px solid #334646;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.texto{
+
+    text-align: center;
+    font-size: 24px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.row{
+
+    margin-left: 10cm;
+    position: relative;
+}
+
+.column{
+    position: relative;
+    background-color: #e9cd9e;
+    opacity: 1;
+    float: left;
+    width: 38%;
+    padding: 25px;
+    height: 500px;
+    margin: 2% 0 2% 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.line1{
+
+    background-color: #334646;
+    opacity: 1;
+}
+
+.column2{
+    position: relative;
+    background-color: white;
+    opacity: 1;
+    float: left;
+    width: 38%;
+    padding: 25px;
+    height: 500px;
+    margin: 2% 0 2% 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.imglactose{
+
+    border: 8px solid #e9cd9e;
+    border-radius: 50%;
+    padding-top: 3em;
+    margin-top: 7em;
+    
+}
+
+.imggluten{
+
+    border: 8px solid #e9cd9e;
+    border-radius: 50%;
+    padding-top: 3em;
+    margin-top: 7em;
+}
+
+.alergia{
+
+    font-family:lobster;
+    font-size: 28px;
+    color:#334646;
+  
+}
+
+.letra{
+
+    font-family:lobster;
+    font-size: 28px;
+    color:#d8aa76
+}
+.btn {
+
+    border-radius: 50%;
+    border-color: #d8aa76;
+    background-color:#d8aa76;
+    font-size: 18px;
+    color:#334646;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 1em;
+
+}
+
+.alergia1 {
+
+    font-family:lobster;
+    font-size: 20px;
+    color:#334646;
+}
+
+
+
+
+
+
+
+
+
+
+
+
