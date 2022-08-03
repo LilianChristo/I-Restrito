@@ -38,3 +38,25 @@
   opacity: 1;
 
 }
+.btn-3d {
+
+  position: relative;
+  top: 6px;
+  border:3;
+  transition: all 40ms linear;
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+}
+
+.btn-3d:active:focus,
+.btn-3d:focus:hover,
+.btn-3d:focus {
+  outline: mediun none;
+}
+
+.btn-3d:active,
+.btn-3d.active {
+  top: 2px;
+}
