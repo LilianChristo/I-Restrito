@@ -26,6 +26,7 @@
   width:120px ;
 }
 
+
 .line1{
 
   background-color: #334646;
@@ -59,4 +60,13 @@
 .btn-3d:active,
 .btn-3d.active {
   top: 2px;
+
 }
+
+.line2{
+
+  background-color: #e9cd9e;
+  opacity: 1;
+
+}
+
