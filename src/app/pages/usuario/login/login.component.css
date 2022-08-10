@@ -1,0 +1,41 @@
+@import url('https://rsms.me/inter/inter.css');
+
+.line1{
+    background-color: #e9cd9e;
+    opacity: 1;
+}
+
+.textform{
+    font-family: "Inter";
+    font-size: 16px;
+    color: #334746;
+    font-weight: 500;
+}
+
+
+.botaoum{
+    background-color: #d8aa76;
+    font-family: "Inter";
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.line2{
+    background-color: #3d6157;
+    opacity: 0.5;
+}
+
+.botaodois{
+    background-color: #334746;
+    font-family: "Inter";
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #f0e5cf;
+    box-shadow: 0 0 0 0.25rem #e9cd9e;
+
+}
