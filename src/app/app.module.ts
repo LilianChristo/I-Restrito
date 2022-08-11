@@ -15,6 +15,7 @@ import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-re
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,3 +39,4 @@ import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
