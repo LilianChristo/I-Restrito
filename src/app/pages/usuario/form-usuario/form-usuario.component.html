@@ -1,1 +1,121 @@
-<p>form-usuario works!</p>
+
+<head>
+    
+
+    <title>usuario</title>
+</head>
+
+<body>
+
+   <hr class="line1" size="8">
+   <hr class="line1" size="8">
+
+   <br>
+
+   <section>
+    <form  name="cadastroUsuario" 
+    method="post" 
+    enctype="multipart/form-data" 
+    action="#">
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="input-area form-text form-control" required id="nome" required maxlength="35"/>
+                <label for="nome" class="label">Nome</label>
+            </div>    
+    </div>
+    </div>
+<br>
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="input-area form-text form-control" required id="sobrenome" required maxlength="60"/>
+                <label for="sobrenome" class="label">Sobrenome</label>
+            </div>
+    </div>
+    </div>
+             
+<br>
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="date" class="input-area form-text form-control" required id="date" required maxlength="10"/>
+                <label for="date" class="label">Data de Nascimento</label>
+            </div> 
+    </div>
+    </div>
+
+    <br>
+                     
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="email" class="input-area form-text form-control" required id="email" required maxlength="60"/>
+                <label for="email" class="label">E-mail</label>
+            </div> 
+    </div>
+    </div>
+    
+<br>
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+    <div class="row g-2">
+        <div class="col-sm-10">
+            <div class="input-group">
+                <input type="text" class="input-area form-text form-control" required id="cidade" required maxlength="30"/>
+                <label for="cidade" class="label">Cidade</label>
+            </div> 
+        </div>
+        <div class="col-sm">
+            <div class="input-group">
+                <input type="text" class="input-area form-text form-control" required id="uf" required maxlength="2"/>
+                <label for="uf" class="label">UF</label>
+            </div> 
+        </div>
+    </div>
+    </div>
+    </div>
+
+<br>
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="password" class="input-area form-text form-control" required id="senha" required maxlength="12" placeholder="mínimo 6 caracteres"/>
+                <label for="senha" class="label">Definir Senha</label>
+            </div> 
+        </div>
+    </div>
+
+<br>
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="password" class="input-area form-text form-control" required id="confirmacaoSenha" required maxlength="12"/>
+                <label for="confirmacaoSenha" class="label">Repetir Senha</label>
+            </div> 
+        </div>
+    </div>
+
+<br>
+
+
+    <div class="row justify-content-center">
+            <div class="col-4 d-flex justify-content-md-end">        
+                  
+            <button type="submit" class="btn btn-secondary btn-lg">Salvar</button>
+
+        </div>
+        </div>
+<br> 
+
+</form>
+</section>
+
+</body>
+

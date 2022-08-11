@@ -13,6 +13,7 @@ import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-pr
 import { FormReceitasComponent } from './pages/receitas/form-receitas/form-receitas.component';
 import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
+import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produ
     ListaProdutosComponent,
     FormReceitasComponent,
     ListaReceitasComponent,
-    FormProdutosComponent
+    FormProdutosComponent,
+    AdicionarProdutosComponent
   ],
   imports: [
     BrowserModule,
