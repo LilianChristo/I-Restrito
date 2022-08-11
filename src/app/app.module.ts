@@ -14,6 +14,8 @@ import { FormReceitasComponent } from './pages/receitas/form-receitas/form-recei
 import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +35,11 @@ import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
