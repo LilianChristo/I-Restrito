@@ -106,7 +106,7 @@
 
 .navbar{
    
-    margin-left: 500px;
+    margin-left: 525px;
 }
 
 .d-inline-block{
@@ -114,7 +114,13 @@
     border-radius: 50%;
     border: #e9cd9e;
     margin-left: 600px;
-    
+   
+}
+
+.barra{
+
+    background-color: #f0e5cf;
+    width: 30%;
 
 
 
