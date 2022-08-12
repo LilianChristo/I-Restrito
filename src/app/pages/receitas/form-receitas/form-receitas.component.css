@@ -63,12 +63,14 @@
 
 .img{
 
-    border-radius: 50%;
+    border-radius: 80%;
+    
 }
 
 .img2{
 
-    border-radius: 50%;
+    border-radius: 80%;
+  
    
 }
 
@@ -96,3 +98,16 @@
 
     margin-top: -30px;
 }
+
+.form-check-input:focus {
+    border-color: #3d6157;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #e9cd9e;
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+    color: #fff;
+    border-color: #e9cd9e;
+    box-shadow: 0 0 0 0.25rem #e9cd9e;
+}
+
