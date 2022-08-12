@@ -1,3 +1,5 @@
+import { FormUsuarioComponent } from './pages/usuario/form-usuario/form-usuario.component';
+import { Menu2Component } from './pages/menu2/menu2.component';
 import { LoginComponent } from './pages/usuario/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule, Component } from '@angular/core';
@@ -11,10 +13,17 @@ const routes: Routes = [
   {
     path:'login',component:LoginComponent
   },
-
+  {
+    path:'menu2',component:Menu2Component
+  },
+  {
+    path:'usuarioform',component:FormUsuarioComponent
+  },
+  
   {
     path:'produto',component:AdicionarProdutosComponent
   }
+
 ];
 
 @NgModule({
