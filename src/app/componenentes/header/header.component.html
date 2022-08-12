@@ -21,20 +21,26 @@
         <li class="nav-item">
           <a class="nav-link disabled"id="traco" href="#">|</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"   id="login" routerLink="/login">LOGIN</a>
-        </li>
-
-        <li class="nav-item">
-
-
-          <button type="button" id="cadastre-se"routerLink="/usuarioform" class="btn-3d" ><b>CADASTRE-SE</b></button>
-
-        </li>
+        <div *ngIf="nomeUsuario !== null; else templateLogin">
+          <li class="nav-item" >
+            {{ nomeUsuario.iss }}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="logout" (click)="logout()">LOGOUT</a>
+          </li>
+        </div>
+        <ng-template #templateLogin>
+          <li class="nav-item">
+            <a class="nav-link"   id="login" routerLink="/login">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" id="cadastre-se"routerLink="/usuarioform" class="btn-3d" ><b>CADASTRE-SE</b></button>
+          </li>
+        </ng-template>
       </ul>
     </div>
   </div>
 </nav>
-<hr class="line1" size="8">
+
 <hr class="line2" size="8">
 

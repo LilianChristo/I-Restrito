@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { UsuarioService } from './../../autenticacao/usuario/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
+  constructor(private usuarioService: UsuarioService, private router: Router){}
 
-  constructor() { }
+  nomeUsuario: any = this.usuarioService.decodificaJWT();
 
-  ngOnInit(): void {
+  logout(){
+    this.usuarioService.logout();
+    location.reload();
   }
-
 }
