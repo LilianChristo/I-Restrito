@@ -9,18 +9,21 @@
     <br>
 
     <section>
-        <form  name="reserva" 
+        <form 
+        #usuarioForm = "ngForm"
+        (ngSubmit)="onSubmit()"  
         method="post" 
-        enctype="multipart/form-data" 
-        action="#">
+        enctype="multipart/form-data" >
 
         <div class="row justify-content-center"> 
             <div class="col-4">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" 
+        name="restrição"
+        [(ngModel)] = "produto.restricao">
             <option selected>Tipo de restrição</option>
             <option value="2">LACTOSE</option>
             <option value="3">GLÚTEN</option>
-          </select>
+          </select>                      
                 </div>
             </div>
 
@@ -29,7 +32,9 @@
 <div class="row justify-content-center"> 
     <div class="col-4">
    <label for="tipoProduto" class="textform">Tipo de produto (alimento, outros):</label>
-        <input 
+        <input
+        [(ngModel)] = "produto.tipoProduto"
+        name="tipoProduto"
         type="text" 
         id="tipoProduto" 
         class="form-text form-control" 
@@ -42,7 +47,9 @@
         <div class="row justify-content-center"> 
             <div class="col-4">
            <label for="nomeProduto" class="textform">Nome do produto:</label>
-                <input 
+                <input
+                [(ngModel)] = "produto.nome"
+                name="nome" 
                 type="text" 
                 id="nomeProduto" 
                 class="form-text form-control" 
@@ -55,7 +62,9 @@
         <div class="row justify-content-center"> 
             <div class="col-4">
            <label for="marcaProduto" class="textform">Marca:</label>
-                <input 
+                <input
+                [(ngModel)] = "produto.marca"
+                name="marca"  
                 type="text" 
                 id="marcaProduto" 
                 class="form-text form-control" 
@@ -68,7 +77,9 @@
         <div class="row justify-content-center"> 
             <div class="col-4">
            <label for="origemInfo" class="textform">Origem da informação:</label>
-                <input 
+                <input
+                [(ngModel)] = "produto.origem"
+                name="origem" 
                 type="text" 
                 id="origemInfo" 
                 class="form-text form-control" 
@@ -81,7 +92,9 @@
         <div class="row justify-content-center"> 
             <div class="col-4">
            <label for="descricao" class="textform">Descrição:</label>
-                <input 
+                <input
+                [(ngModel)] = "produto.descricao"
+                nome="descricao" 
                 type="text" 
                 id="descricao" 
                 class="form-text form-control" 
