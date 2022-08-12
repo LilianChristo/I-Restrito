@@ -14,8 +14,10 @@ import { FormReceitasComponent } from './pages/receitas/form-receitas/form-recei
 import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Menu2Component } from './pages/menu2/menu2.component';
+import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
 
 
 @NgModule({
@@ -31,13 +33,17 @@ import { HttpClientModule } from '@angular/common/http';
     FormReceitasComponent,
     ListaReceitasComponent,
     FormProdutosComponent,
-    AdicionarProdutosComponent
+    AdicionarProdutosComponent,
+    Menu2Component,
+    MensagemComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
 
   ],

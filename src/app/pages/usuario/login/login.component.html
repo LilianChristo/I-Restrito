@@ -1,11 +1,12 @@
 <body>
 <br>
 <br>
+<app-header></app-header>
     <section>
-        <form  name="login"
-        method="post"
+        <form  name="login"(ngSubmit)="login()" #loginForm="ngForm">
+        <!--"method="post"
         enctype="multipart/form-data"
-        action="#" (ngSubmit)="login()">
+        action="#" >-->
 
         <div class="row justify-content-center">
             <div class="col-4">
@@ -14,7 +15,8 @@
                 type="email"
                 id="email"
                 class="form-text form-control"
-                required maxlength="60" [(ngModel)]="email" name="email"/>
+                required maxlength="60" [(ngModel)]="email" name="email" #campoEmail="ngModel" required/>
+                <app-mensagem *ngIf="campoEmail.invalid && campoSenha.touched" mensagem="Email obrigatório"></app-mensagem>
             </div>
         </div>
 
@@ -27,7 +29,8 @@
                 type="password"
                 id="senha"
                 class="form-text form-control"
-                required maxlength="12"[(ngModel)]="senha" name="senha" />
+                required maxlength="12"[(ngModel)]="senha" name="senha" #campoSenha="ngModel" required />
+                <app-mensagem *ngIf="campoSenha.invalid  && campoSenha.touched" mensagem="Senha obrigatória"></app-mensagem>
             </div>
         </div>
 <br>
@@ -36,7 +39,7 @@
 <div class="row justify-content-center">
     <div class="col-4 d-grid gap-2">
 
-    <button type="submit" class="btn btn-lg botaoum">Entrar</button>
+    <button type="submit" class="btn btn-lg botaoum" [disabled]="loginForm.invalid">Entrar</button>
 
 </div>
 </div>
@@ -52,7 +55,7 @@
 <div class="row justify-content-center">
     <div class="col-4 d-grid gap-2">
 
-    <button type="submit" class="btn btn-lg botaodois">Criar conta</button>
+    <button type="submit" class="btn btn-lg botaodois" routerLink="/usuarioform">Criar conta</button>
 
 </div>
 </div>
