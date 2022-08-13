@@ -1,3 +1,11 @@
+<app-header></app-header>
+
+<head>
+
+    <title>Lista Produto</title>
+
+</head>
+
 <!-- Imagem do topo -->
 <div class="row">
   <img class="img-fluid" src="../../../assets/img/Topo4.png">
@@ -15,9 +23,13 @@
 
   
         <div class="cadastrar"><button class="btn btn-outline-success my-2 my-sm-0"
-            style="background-color:#3D6157; border-color:#3D6157; color:white" type="submit">
-            Cadastrar produto
+            style="background-color:#3D6157; border-color:#3D6157; color:white" type="submit" routerLink="/adicionaproduto">
           </button></div>
+
+            <div class="cadastrar"><button class="btn btn-outline-success my-2 my-sm-0"
+              style="background-color:#3D6157; border-color:#3D6157; color:white" type="submit" (click)="listarProdutos()">GET</button>>
+            Cadastrar produto
+          </div>
         <!-- Campo de pesquisa 
         <nav class="text-center">
           <form class="text-center">

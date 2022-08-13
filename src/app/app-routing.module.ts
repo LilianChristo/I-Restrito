@@ -4,6 +4,9 @@ import { LoginComponent } from './pages/usuario/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdicionarProdutoComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
+import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-produtos.component';
+import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,18 @@ const routes: Routes = [
   {
     path:'usuarioform',component:FormUsuarioComponent
   },
+  
+  {
+    path:'adicionaproduto',component:AdicionarProdutoComponent
+  },
+
+  {
+    path:'produto',component:ListaProdutosComponent
+  },
+
+  {
+    path:'1produto',component:FormProdutosComponent
+  }
 
 ];
 
