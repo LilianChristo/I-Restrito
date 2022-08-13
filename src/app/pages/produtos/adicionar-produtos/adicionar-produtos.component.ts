@@ -1,36 +1,62 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from 'src/app/service/adicionar-produtos.service';
-import { Produto } from './adicionar-produtos';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdicionarProduto } from './adicionar-produtos';
+import { AdicionarProdutoService } from './adicionar-produtos.service';
 
 @Component({
   selector: 'app-adicionar-produtos',
   templateUrl: './adicionar-produtos.component.html',
   styleUrls: ['./adicionar-produtos.component.css']
 })
-export class AdicionarProdutosComponent implements OnInit {
-  produtos = [] as any;
+export class AdicionarProdutoComponent implements OnInit {
+  formProdutoForm!: FormGroup;
 
-  produto:Produto = {
-    nome:"",
-    descricao:"",
-    restricao:"",
-    origem:"",
-    marca:"",
-    tipoProduto:"",
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private formProdutoService: AdicionarProdutoService,
+    private router: Router
 
-  constructor(private service: ProdutoService) { 
-    this.produto = new Produto("", "", "", "", "","");
-  }
+  ) { }
+
 
   ngOnInit(): void {
+    this.formProdutoForm = this.formBuilder.group({
+      nome: ['', [
+        Validators.required, Validators.minLength(3)
+      ]],
+      descricao: ['', [
+        Validators.required, Validators.minLength(3)
+      ]],
+      restricao: [''],
+      origem: ['', [
+        Validators.required, Validators.minLength(2), Validators.maxLength(2)
+      ]],
+      marca: ['', [
+        Validators.required, Validators.minLength(2), Validators.maxLength(50)
+      ]],
+      tipoProduto: ['', [
+        Validators.required
+      ]],
+    },
+    {
+      
+    },
+    );
+
   }
 
-  onSubmit(){
-    this.service
-      .inserirProduto(this.produto)
-      .subscribe(response => console.log(response));
+  cadastrar() {
+    if (this.formProdutoForm.valid) {
 
+      const novoProdutoForm = this.formProdutoForm.getRawValue() as AdicionarProduto;
+      this.formProdutoService.cadastraNovoProduto(novoProdutoForm).subscribe({
+        next: (v) => this.router.navigate(['login']),
+        error: (e) => alert('Tente novamente'),
+        complete: () => console.info('complete')
+
+      })
+
+    }
   }
-
 }

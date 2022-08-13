@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { AdicionarProdutoService } from './adicionar-produtos.service';
 
-import { AdicionarProdutosComponent } from './adicionar-produtos.component';
 
-describe('AdicionarProdutosComponent', () => {
-  let component: AdicionarProdutosComponent;
-  let fixture: ComponentFixture<AdicionarProdutosComponent>;
+describe('AdicionarProdutoService', () => {
+  let service: AdicionarProdutoService;
+ 
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AdicionarProdutosComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(AdicionarProdutosComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+      service = TestBed.inject(AdicionarProdutoService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 });

@@ -1,4 +1,4 @@
-export interface AdicionarProduto {
+export interface ListaProdutos {
     nome: string;
     descricao: string;
     restricao: string;

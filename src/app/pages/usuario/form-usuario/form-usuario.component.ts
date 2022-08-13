@@ -3,7 +3,8 @@ import { FormUsuarioService } from './form-usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormUsuario } from './form-usuario';
-import { senhaIguaisValidator } from './senhaiguais-validator';
+import { senhaIguaisValidator } from './senhaIguais-validator';
+
 
 @Component({
   selector: 'app-form-usuario',
