@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: 'menu2', component: Menu2Component
   },
+
   {
     path: 'usuario/cadastrar', component: FormUsuarioComponent
   },
@@ -30,7 +31,6 @@ const routes: Routes = [
   {
     path: '1produto', component: FormProdutosComponent
   }
-
 ];
 
 @NgModule({
