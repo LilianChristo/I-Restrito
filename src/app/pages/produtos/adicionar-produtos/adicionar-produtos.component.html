@@ -1,106 +1,82 @@
+<app-header></app-header>
+
+<head>
+  <title>produto</title>
+</head>
+
 <body>
-    <hr class="line1" size="8">
-    <hr class="line1" size="8">
-   
-    <br>
-
-    <div class="titulo">Cadastrar Produto</div>
-
-    <br>
-
-    <section>
-        <form  name="reserva" 
-        method="post" 
-        enctype="multipart/form-data" 
-        action="#">
-
-        <div class="row justify-content-center"> 
-            <div class="col-4">
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Tipo de restrição</option>
-            <option value="2">LACTOSE</option>
-            <option value="3">GLÚTEN</option>
+  <br>
+  <div class="titulo">Cadastrar Produto</div>
+  <br>
+  <section>
+    <form name="cadastroProduto" class="justify-content-center d-flex" [formGroup]="formProdutoForm"
+      (submit)="cadastrar()" method="post" action="#">
+      <div class="row w-50">
+        <div class="col-12 mb-3">
+          <label for="restricao" class="textform">Tipo de restrição</label>
+          <select class="form-select" aria-label="Default select example" formControlName="restricao" id="restricao"
+            required>
+            <option value="LACTOSE">Lactose</option>
+            <option value="GLUTEN">Glúten</option>
           </select>
-                </div>
-            </div>
-
-<br>
-
-<div class="row justify-content-center"> 
-    <div class="col-4">
-   <label for="tipoProduto" class="textform">Tipo de produto (alimento, outros):</label>
-        <input 
-        type="text" 
-        id="tipoProduto" 
-        class="form-text form-control" 
-        required maxlength="10" />
-    </div>
-</div>
-
-<br>
-
-        <div class="row justify-content-center"> 
-            <div class="col-4">
-           <label for="nomeProduto" class="textform">Nome do produto:</label>
-                <input 
-                type="text" 
-                id="nomeProduto" 
-                class="form-text form-control" 
-                required maxlength="60" />
-            </div>
+          <app-mensagem
+            *ngIf="formProdutoForm.get('restricao')?.errors?.['required'] && formProdutoForm.get('restricao')?.touched"
+            mensagem="Tipo de restrição obrigatório"></app-mensagem>
         </div>
-        
-        <br>
-
-        <div class="row justify-content-center"> 
-            <div class="col-4">
-           <label for="marcaProduto" class="textform">Marca:</label>
-                <input 
-                type="text" 
-                id="marcaProduto" 
-                class="form-text form-control" 
-                required maxlength="60" />
-            </div>
+        <div class="col-12 mb-3">
+          <label for="tipoProduto" class="textform">Tipo do produto (alimento, outros):</label>
+          <input formControlName="tipoProduto" type="text" id="tipoProduto" class="form-text form-control" required
+            maxlength="10" />
+          <app-mensagem
+            *ngIf="formProdutoForm.get('tipoProduto')?.errors?.['required'] && formProdutoForm.get('tipoProduto')?.touched"
+            mensagem="Tipo do produto obrigatório"></app-mensagem>
         </div>
-
-        <br>
-
-        <div class="row justify-content-center"> 
-            <div class="col-4">
-           <label for="origemInfo" class="textform">Origem da informação:</label>
-                <input 
-                type="text" 
-                id="origemInfo" 
-                class="form-text form-control" 
-                required maxlength="200" />
-            </div>
+        <div class="col-12 mb-3">
+          <label for="nomeProduto" class="textform">Nome do produto:</label>
+          <input formControlName="nome" type="text" id="nomeProduto" class="form-text form-control" required
+            maxlength="60" />
+          <app-mensagem
+            *ngIf="formProdutoForm.get('nome')?.errors?.['required'] && formProdutoForm.get('nome')?.touched"
+            mensagem="Nome obrigatório"></app-mensagem>
         </div>
-
-        <br>
-
-        <div class="row justify-content-center"> 
-            <div class="col-4">
-           <label for="descricao" class="textform">Descrição:</label>
-                <input 
-                type="text" 
-                id="descricao" 
-                class="form-text form-control" 
-                required maxlength="200" />
-            </div>
+        <div class="col-12 mb-3">
+          <label for="marcaProduto" class="textform">Marca:</label>
+          <input formControlName="marca" type="text" id="marcaProduto" class="form-text form-control" required
+            maxlength="60" />
+          <app-mensagem
+            *ngIf="formProdutoForm.get('marca')?.errors?.['required'] && formProdutoForm.get('marca')?.touched"
+            mensagem="Marca obrigatória"></app-mensagem>
         </div>
-
-        <br>
-
-        <div class="row justify-content-center">
-            <div class="col-4 d-flex justify-content-md-end">        
-                  
-            <button type="submit" class="btn btn-secondary btn-lg">Cadastrar</button>
-
+        <div class="col-12 mb-3">
+          <label for="origemInfo" class="textform">Origem da informação:</label>
+          <input formControlName="origem" type="text" id="origemInfo" class="form-text form-control" required
+            maxlength="200" />
+          <app-mensagem
+            *ngIf="formProdutoForm.get('origem')?.errors?.['required'] && formProdutoForm.get('origem')?.touched"
+            mensagem="Origem obrigatória"></app-mensagem>
         </div>
+        <div class="col-12 mb-3">
+          <label for="descricao" class="textform">Descrição:</label>
+          <input formControlName="descricao" type="text" id="descricao" class="form-text form-control" required
+            maxlength="200" />
+          <app-mensagem
+            *ngIf="formProdutoForm.get('descricao')?.errors?.['required'] && formProdutoForm.get('descricao')?.touched"
+            mensagem="Descrição obrigatória"></app-mensagem>
         </div>
-<br> 
-
+        <div class="col-12 mb-3">
+          <input (change)="getFile($event)" formControlName="imagem" type="file" id="imagem"
+            class="form-text form-control" required>
+          <app-mensagem
+            *ngIf="formProdutoForm.get('imagem')?.errors?.['required'] && formProdutoForm.get('imagem')?.touched"
+            mensagem="Imagem obrigatória"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3 d-flex justify-content-md-end">
+          <button type="button" class="btn btn-secondary btn-lg" type="submit">
+            Cadastrar
+          </button>
+        </div>
+      </div>
+      <br>
     </form>
-</section>
-
+  </section>
 </body>

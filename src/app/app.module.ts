@@ -14,11 +14,12 @@ import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-pr
 import { FormReceitasComponent } from './pages/receitas/form-receitas/form-receitas.component';
 import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
-import { AdicionarProdutosComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
+import { AdicionarProdutoComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Menu2Component } from './pages/menu2/menu2.component';
 import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
+import { Interceptors } from './utils/interceptors';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
     FormReceitasComponent,
     ListaReceitasComponent,
     FormProdutosComponent,
-    AdicionarProdutosComponent,
+    AdicionarProdutoComponent,
     Menu2Component,
     MensagemComponent
 
@@ -44,12 +45,19 @@ import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptors,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 

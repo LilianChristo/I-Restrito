@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar static-top fixed " >
+<nav class="navbar navbar-expand-lg navbar static-top fixed ">
   <div class="container">
     <a class="navbar-brand" href="#">
 
-      <img class="logo" src="../../../assets/img/Logo1.png" alt="..." height="180px" >
-      <img class="redes" src="../../../assets/img/Redes.png" alt="..." height="30" >
+      <img class="logo" src="../../../assets/img/Logo1.png" alt="..." height="180px">
+      <img class="redes" src="../../../assets/img/Redes.png" alt="..." height="30">
 
     </a>
 
-    <div class="navbar-default navbar-top" id="navbar" style="width: 200px;" >
-      <ul class="navbar-nav text-sm-left mr-5" >
+    <div class="navbar-default navbar-top" id="navbar" style="width: 200px;">
+      <ul class="navbar-nav text-sm-left mr-5">
         <li class="nav-item active ">
           <a class="nav-link" href="#" id="itens">INÍCIO <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="itens">PRODUTOS </a>
+          <a class="nav-link" id="produto" routerLink="/produto">PRODUTOS </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" id="itens">RECEITAS </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled"id="traco" href="#">|</a>
+          <a class="nav-link disabled" id="traco" href="#">|</a>
         </li>
         <div *ngIf="nomeUsuario !== null; else templateLogin">
-          <li class="nav-item" >
+          <li class="nav-item">
             {{ nomeUsuario.iss }}
           </li>
           <li class="nav-item">
@@ -31,10 +31,12 @@
         </div>
         <ng-template #templateLogin>
           <li class="nav-item">
-            <a class="nav-link"   id="login" routerLink="/login">LOGIN</a>
+            <a class="nav-link" id="login" routerLink="/login">LOGIN</a>
           </li>
           <li class="nav-item">
-            <button type="button" id="cadastre-se"routerLink="/usuarioform" class="btn-3d" ><b>CADASTRE-SE</b></button>
+            <button type="button" id="cadastre-se" routerLink="/usuario/cadastrar" class="btn-3d">
+              <b>CADASTRE-SE</b>
+            </button>
           </li>
         </ng-template>
       </ul>
@@ -43,4 +45,3 @@
 </nav>
 
 <hr class="line2" size="8">
-
