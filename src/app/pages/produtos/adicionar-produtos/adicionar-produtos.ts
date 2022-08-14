@@ -1,5 +1,5 @@
 enum Restricao {
-  GLUTEN, LACTOSE
+  GLUTEN, LACTOSE, CASEINA
 }
 
 export interface AdicionarProduto {

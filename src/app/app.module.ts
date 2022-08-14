@@ -20,6 +20,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Menu2Component } from './pages/menu2/menu2.component';
 import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
 import { Interceptors } from './utils/interceptors';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
+
 
 
 @NgModule({
@@ -37,7 +42,10 @@ import { Interceptors } from './utils/interceptors';
     FormProdutosComponent,
     AdicionarProdutoComponent,
     Menu2Component,
-    MensagemComponent
+    MensagemComponent,
+
+    
+
 
   ],
   imports: [
@@ -46,6 +54,8 @@ import { Interceptors } from './utils/interceptors';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
+    
 
 
   ],
