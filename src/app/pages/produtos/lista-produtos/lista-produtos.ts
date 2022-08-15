@@ -1,10 +1,14 @@
 export interface ListaProdutos {
-    nome: string;
+
+    id: number;
     descricao: string;
-    restricao: string;
-    origem: string;
+    foto: string;
     marca: string;
+    nome: string;
+    origem: string;
+    restricao: string;
     tipoProduto: string;
-
-
+    usuario: number;
 }
+
+    export type Produtos = Array<ListaProdutos>;

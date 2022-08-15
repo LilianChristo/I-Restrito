@@ -21,8 +21,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Menu2Component } from './pages/menu2/menu2.component';
 import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
 import { Interceptors } from './utils/interceptors';
-import { AdicionarReceitasComponent } from './pages/receitas/adicionar-receitas/adicionar-receitas.component';
-import { InicioReceitasComponent } from './pages/receitas/adicionar-receitas/inicio-receitas/inicio-receitas.component';
 
 
 @NgModule({
@@ -40,9 +38,7 @@ import { InicioReceitasComponent } from './pages/receitas/adicionar-receitas/ini
     FormProdutosComponent,
     AdicionarProdutoComponent,
     Menu2Component,
-    MensagemComponent,
-    AdicionarReceitasComponent,
-    InicioReceitasComponent
+    MensagemComponent
 
   ],
   imports: [
