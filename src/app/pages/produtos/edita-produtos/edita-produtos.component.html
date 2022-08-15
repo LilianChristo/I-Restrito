@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <head>
-  <title>editaProduto</title>
+  <title>produto</title>
 </head>
 
 <body>
@@ -9,8 +9,8 @@
   <div class="titulo">Cadastrar Produto</div>
   <br>
   <section>
-    <form name="cadastroProduto" class="justify-content-center d-flex" [formGroup]="formProdutoForm"
-      (submit)="cadastrar()" method="post" action="#">
+    <form name="editaProduto" class="justify-content-center d-flex" [formGroup]="formProdutoForm"
+      method="post" action="#">
       <div class="row w-50">
         <div class="col-12 mb-3">
           <label for="restricao" class="textform">Tipo de restrição</label>
@@ -72,7 +72,7 @@
         </div>
         <div class="col-12 mb-3 d-flex justify-content-md-end">
           <button type="button" class="btn btn-secondary btn-lg" type="submit">
-            Cadastrar
+            Editar
           </button>
         </div>
       </div>

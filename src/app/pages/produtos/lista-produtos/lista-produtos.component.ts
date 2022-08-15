@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ListaProdutos, Produtos } from './lista-produtos';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ListaProdutos, Produto } from './lista-produtos';
+
 import { ListarProdutosService } from './lista-produtos-service';
 
 @Component({
@@ -9,30 +12,30 @@ import { ListarProdutosService } from './lista-produtos-service';
 })
 export class ListaProdutosComponent implements OnInit {
   public paginaAtual = 1;
-  @Input() produtos: Produtos = [];
-  @Input() produto!: ListaProdutos;
+  listaProdutos!: ListaProdutos;
+  produto!: Produto;
 
-  constructor(private produtosService: ListarProdutosService, ) { 
+  constructor(private produtosService: ListarProdutosService, private router: Router, route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-       this.produtosService.listaTodosProdutos().subscribe(produtos => {this.produtos = produtos;
-      console.log(this.produtos);
-    })
+    this.produtosService.listaTodosProdutos().subscribe((produtos) => { this.listaProdutos = produtos; })
+    console.log(this.listaProdutos);
   }
+
 
   onEditById(id: number): void {
-    this.produtosService.listarProdutoPorId(id).subscribe(produto => {this.produto = produto;
-      console.log(produto);
-    })
+    this.router.navigate(['produto/editar', id]);
   }
+
 
   onDeleteById(id: number): void {
-    this.produtosService.deletarProdutoPorId(id).subscribe(produto => {this.produto = produto;
+    this.produtosService.deletarProdutoPorId(id).subscribe(produto => {
+      this.produto = produto;
       console.log(produto);
     })
   }
 
-  
 }
+
