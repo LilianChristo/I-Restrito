@@ -1,0 +1,22 @@
+.img-fluid {
+    border: 8px solid #334646;
+    background-color: #334646;
+
+}
+
+.line2 {
+    background-color: #F0E5CF;
+    opacity: 2;
+    
+}
+.container {
+    margin: 0% 2% 2% 2%;
+}
+
+.pagination{
+    margin: 0% 3% 2% 2%;
+}
+
+.cadastrar{
+    margin: 2% 0% 0% 2%;
+}
