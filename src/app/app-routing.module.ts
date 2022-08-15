@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdicionarProdutoComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
 import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-produtos.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
+import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-produtos.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: '1produto', component: FormProdutosComponent
+  },
+  {
+    path: 'produto/editar/:id', component: EditaProdutosComponent
   }
 ];
 

@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenService } from 'src/app/autenticacao/token.service';
 import { environment } from 'src/environments/environment';
-import { ListaProdutos, Produtos } from './lista-produtos';
+import { ListaProdutos, Produto } from './lista-produtos';
+
 
 
 
@@ -15,18 +16,18 @@ const API = environment.apiURL;
 export class ListarProdutosService {
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  listaTodosProdutos(): Observable<Produtos> {
-    return this.http.get<Produtos>(`${API}/produto`);
+  listaTodosProdutos(): Observable<ListaProdutos> {
+    return this.http.get<ListaProdutos>(`${API}/produto`);
   }
 
-    listarProdutoPorId(id: number): Observable<ListaProdutos> {
-       return this.http.get<ListaProdutos>(`${API}/produto/${id}`);
+  listarProdutoPorId(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${API}/produto/${id}`);
   }
 
-  deletarProdutoPorId(id: number): Observable<ListaProdutos> {
+  deletarProdutoPorId(id: number): Observable<Produto> {
     const token = this.tokenService.retornaToken();
     const headers = new HttpHeaders().append('Bearer', token);
-    return this.http.delete<ListaProdutos>(`${API}/produto/${id}`, {headers});
+    return this.http.delete<Produto>(`${API}/produto/${id}`, { headers });
   }
 
 
