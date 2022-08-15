@@ -1,3 +1,4 @@
+import { AdicionarReceita } from './pages/receitas/adicionar-receitas/adicionar-receita';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Menu2Component } from './pages/menu2/menu2.component';
 import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
 import { Interceptors } from './utils/interceptors';
+import { AdicionarReceitasComponent } from './pages/receitas/adicionar-receitas/adicionar-receitas.component';
+import { InicioReceitasComponent } from './pages/receitas/adicionar-receitas/inicio-receitas/inicio-receitas.component';
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { Interceptors } from './utils/interceptors';
     FormProdutosComponent,
     AdicionarProdutoComponent,
     Menu2Component,
-    MensagemComponent
+    MensagemComponent,
+    AdicionarReceitasComponent,
+    InicioReceitasComponent
 
   ],
   imports: [

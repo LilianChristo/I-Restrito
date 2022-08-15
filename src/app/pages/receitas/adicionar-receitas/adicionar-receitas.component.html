@@ -1,0 +1,82 @@
+
+
+<head>
+  <title>Receita</title>
+</head>
+<body>
+  <br>
+  <div class="titulo">Cadastrar Receita</div>
+  <br>
+  <section>
+    <form name="cadastroReceita" class="justify-content-center d-flex" [formGroup]="formReceitaForm"
+      (submit)="cadastrar()" method="post" action="#">
+      <div class="row w-50">
+        <div class="col-12 mb-3">
+          <label for="restricao" class="textform">Tipo de restrição</label>
+          <select class="form-select" aria-label="Default select example" formControlName="restricao" id="restricao"
+            required>
+            <option value="LACTOSE">Lactose</option>
+            <option value="GLUTEN">Glúten</option>
+          </select>
+          <app-mensagem
+            *ngIf="formReceitaForm.get('restricao')?.errors?.['required'] && formReceitaForm.get('restricao')?.touched"
+            mensagem="Tipo de restrição obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="titulo" class="textform">Título:</label>
+          <input formControlName="titulo" type="text" id="titulo" class="form-text form-control" required
+            maxlength="50" />
+          <app-mensagem
+            *ngIf="formReceitaForm.get('titulo')?.errors?.['required'] && formReceitaForm.get('tituloReceita')?.touched"
+            mensagem="Título obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="ingredientes" class="textform">Ingredientes:</label>
+          <input formControlName="ingredientes" type="text" id="ingredientes" class="form-text form-control" required
+            maxlength="60" />
+          <app-mensagem
+            *ngIf="formReceitaForm.get('nome')?.errors?.['required'] && formReceitaForm.get('nome')?.touched"
+            mensagem="Ingredientes obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="modo_de_fazer" class="textform">Marca:</label>
+          <input formControlName="modo_de_fazer" type="text" id="modo_de_fazer" class="form-text form-control" required
+            maxlength="60" />
+          <app-mensagem
+            *ngIf="formReceitaForm.get('modo_de_fazer')?.errors?.['required'] && formReceitaForm.get('modo_de_fazer')?.touched"
+            mensagem="Modo de fazer obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="rendimento" class="textform">Rendimento:</label>
+          <input formControlName="rendimento" type="text" id="rendimento" class="form-text form-control" required
+            maxlength="200" />
+          <app-mensagem
+            *ngIf="formReceitaForm.get('rendimento')?.errors?.['required'] && formReceitaForm.get('rendimento')?.touched"
+              mensagem="Rendimento obrigatório"></app-mensagem>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="tempo_de_preparo" class="textform">Tempo de Prepraro:</label>
+          <input formControlName="tempo_de_preparo" type="text" id="tempo_de_preparo" class="form-text form-control" required
+            maxlength="200" />
+          <app-mensagem
+            *ngIf="formReceitaForm.get('tempo_de_preparo')?.errors?.['required'] && formReceitaForm.get('tempo_de_preparo')?.touched"
+            mensagem="Tempo de preparo obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3">
+          <input (change)="getFile($event)" formControlName="imagem" type="file" id="imagem"
+            class="form-text form-control" required>
+          <app-mensagem
+            *ngIf="formReceitaForm.get('imagem')?.errors?.['required'] && formReceitaForm.get('imagem')?.touched"
+            mensagem="Imagem obrigatório"></app-mensagem>
+        </div>
+        <div class="col-12 mb-3 d-flex justify-content-md-end">
+          <button type="button" class="btn btn-secondary btn-lg" type="submit">
+            Cadastrar
+          </button>
+        </div>
+      </div>
+      <br>
+    </form>
+  </section>
+</body>
