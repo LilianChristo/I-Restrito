@@ -43,13 +43,14 @@
     <ng-container class="container">
 
       <div class ="row">
-        <div *ngFor="let produto of produtos | paginate: {itemsPerPage: 5, currentPage: paginaAtual}; let i = index" class="col-12">
-                <div class="text-right">
+        <div *ngFor="let produto of listaProdutos.content | paginate: {itemsPerPage: 5, currentPage: paginaAtual}; let i = index" class="col-4">
+                <div class="center">
                     <img class="Foto"
-                        [src="produto.foto" [alt]="produto.nome" height="90" width="90" style=border-radius:300px>
+                        [src]="produto.foto" [alt]="produto.nome" height="90" width="90" style=border-radius:300px>
                     <p></p>
                     <!-- Lixeira -->
-                    <button class="btn btn-outline btn-sm" class="btn" style="color:#3D6157"><svg
+                    <button class="btn btn-outline btn-sm" class="btn"  (click)=onDeleteById(produto.id) routerLink="produto"  style="color:#3D6157">
+                      <svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
                             viewBox="0 0 16 16">
                             <path
@@ -61,7 +62,7 @@
                         </svg>
                     </button>
                     <!-- Edição -->
-                    <button class="btn-outline btn-sm" class="btn" style="color:#3D6157">
+                    <button class="btn-outline btn-sm" class="btn" (click)=onEditById(produto.id) style="color:#3D6157">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">
                             <path

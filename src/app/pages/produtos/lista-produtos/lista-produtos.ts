@@ -1,4 +1,9 @@
-export interface ListaProdutos {
+export interface ListaProdutos extends Produto {
+content: Produto[];
+
+}
+
+export interface Produto {
 
     id: number;
     descricao: string;
@@ -9,6 +14,8 @@ export interface ListaProdutos {
     restricao: string;
     tipoProduto: string;
     usuario: number;
+
 }
 
-    export type Produtos = Array<ListaProdutos>;
+
+
