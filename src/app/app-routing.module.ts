@@ -11,6 +11,7 @@ import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-pr
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
 import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-produtos.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { ListaProdutosNomeComponent } from './pages/produtos/lista-produtos-nome/lista-produtos-nome.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   },
   {
     path: 'FormReceita', component: FormReceitasComponent
+  },
+
+  {
+    path: 'produto/nome/:nome', component: ListaProdutosNomeComponent
   },
 
 ];

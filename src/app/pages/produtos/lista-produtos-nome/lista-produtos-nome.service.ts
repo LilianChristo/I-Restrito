@@ -3,29 +3,28 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenService } from 'src/app/autenticacao/token.service';
 import { environment } from 'src/environments/environment';
-import { ListaProdutos, Produto } from './lista-produtos';
-
-
+import { ListaProdutosNome, Produto } from './lista-produtos-nome';
 
 
 const API = environment.apiURL;
+
 @Injectable({
   providedIn: 'root'
 })
+export class ListaProdutosNomeService {
 
-export class ListarProdutosService {
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  listaTodosProdutos(): Observable<ListaProdutos> {
-    return this.http.get<ListaProdutos>(`${API}/produto`);
+  listaTodosProdutos(): Observable<ListaProdutosNome> {
+    return this.http.get<ListaProdutosNome>(`${API}/produto`);
   }
 
   listarProdutoPorId(id: number): Observable<Produto> {
     return this.http.get<Produto>(`${API}/produto/${id}`);
   }
 
-  listarProdutoPorNome(nome: string): Observable<Produto> {
-    return this.http.get<Produto>(`${API}/produto/nome/${nome}`);
+  listarProdutoPorNome(nome: string): Observable<ListaProdutosNome> {
+    return this.http.get<ListaProdutosNome>(`${API}/produto/nome/${nome}`);
   }
 
   deletarProdutoPorId(id: number): Observable<Produto> {
@@ -36,3 +35,4 @@ export class ListarProdutosService {
 
 
 } 
+
