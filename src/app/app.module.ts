@@ -22,6 +22,7 @@ import { MensagemComponent } from './componenentes/mensagem/mensagem.component';
 import { Interceptors } from './utils/interceptors';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-produtos.component';
+import { ListaProdutosNomeComponent } from './pages/produtos/lista-produtos-nome/lista-produtos-nome.component';
 
 
 
@@ -45,6 +46,7 @@ import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-pr
     Menu2Component,
     MensagemComponent,
     EditaProdutosComponent,
+    ListaProdutosNomeComponent,
 
     
 

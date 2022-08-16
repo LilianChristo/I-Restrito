@@ -1,5 +1,5 @@
-export interface ListaProdutos extends Produto {
-content: Produto[];
+export interface ListaProdutosNome extends Produto {
+    content: Produto[];
 
 }
 
@@ -15,11 +15,6 @@ export interface Produto {
     tipoProduto: string;
     usuario: number;
 
-}
-
-
-export interface Busca {
-    nome: string;
 }
 
 

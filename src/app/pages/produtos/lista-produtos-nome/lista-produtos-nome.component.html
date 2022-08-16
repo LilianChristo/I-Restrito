@@ -25,19 +25,12 @@
   <div class="cadastrar">
     <button class="btn btn-outline-success my-2 my-sm-0"
       style="background-color:#3D6157; border-color:#3D6157; color:white">
-      <a routerLink="cadastrar" style="color: inherit; text-decoration: unset;">Cadastrar</a>
+      <a routerLink="/produto" style="color: inherit; text-decoration: unset;">Voltar</a>
     </button>
   </div>
 
 
-        <nav class="text-center">
-          <form class="text-center"  >
-            <input class="text-right" type="search" [formControl] = "queryField" placeholder="Pesquisar" aria-label="Digite sua pesquisa">
-            <button class="btn btn-sm btn-outline-success" style="background-color: #80aa9e; color:black"
-              type="submit" (click) = onSearchByNome() >Produto</button>
-          </form>
-        </nav>
-
+ 
         <!-- Grid para lista dos produtos -->
   <br>
   <br>
@@ -110,13 +103,12 @@
 
 
       </div>
-      
-
-
-
-
-
     </div>
+
+
+
+
+  </div>
   <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
   </pagination-controls>
 
