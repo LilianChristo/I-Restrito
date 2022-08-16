@@ -21,10 +21,10 @@ export class AdicionarProdutoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.formProdutoForm = this.formBuilder.group({
+ this.formProdutoForm = this.formBuilder.group({
       nome: ['', [
         Validators.required, Validators.minLength(5), Validators.maxLength(50)
-      ]],
+      ]],   
       descricao: ['', [
         Validators.required, Validators.minLength(5), Validators.maxLength(250)
       ]],

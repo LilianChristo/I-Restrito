@@ -1,48 +1,43 @@
-import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Busca, ListaProdutos, Produto } from './lista-produtos';
-import { ListarProdutosService } from './lista-produtos-service';
+import { ListaProdutosNome, Produto } from './lista-produtos-nome';
+import { ListaProdutosNomeService } from './lista-produtos-nome.service';
 
 @Component({
-  selector: 'app-lista-produtos',
-  templateUrl: './lista-produtos.component.html',
-  styleUrls: ['./lista-produtos.component.css']
+  selector: 'app-lista-produtos-nome',
+  templateUrl: './lista-produtos-nome.component.html',
+  styleUrls: ['./lista-produtos-nome.component.css']
 })
-export class ListaProdutosComponent implements OnInit {
+export class ListaProdutosNomeComponent implements OnInit {
+
   public paginaAtual = 1;
-  listaProdutos!: ListaProdutos;
+  listaProdutos!: ListaProdutosNome;
   produto!: Produto;
   cursoSelecionadoId!: number;
-  busca!: Busca;
-  formProdutoForm!: FormGroup;
-  queryField = new FormControl();
+  
 
   constructor(
-    private produtosService: ListarProdutosService, 
-    private router: Router, route: ActivatedRoute,
-
-    
+    private produtosService: ListaProdutosNomeService, 
+    private router: Router, private route: ActivatedRoute,
     ) {
 
   }
 
   ngOnInit(): void {
-    this.produtosService.listaTodosProdutos().subscribe((produtos) => { this.listaProdutos = produtos; })
-    console.log(this.listaProdutos);
 
+    this.route.params.subscribe(params => {
+      const nome = params['nome'];
+      console.log(nome);
+      this.produtosService.listarProdutoPorNome(nome).subscribe((produtos) => { this.listaProdutos = produtos; })
+      console.log(this.listaProdutos); 
+    })
   }
-
 
   onEditById(id: number): void {
     this.router.navigate(['produto/editar', id]);
   }
 
-  onSearchByNome() {
-    console.log(this.queryField.value);
-    this.router.navigate(['produto/nome', this.queryField.value]);
-  }
+
 
   onDeleteById(): void {
     this.produtosService.deletarProdutoPorId(this.cursoSelecionadoId).subscribe( {
@@ -77,4 +72,3 @@ export class ListaProdutosComponent implements OnInit {
 }
 
 }
-
