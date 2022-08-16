@@ -43,9 +43,7 @@ const routes: Routes = [
   {
     path: 'listReceita', component: ListaReceitasComponent
   },
-  {
-    path: 'menu', component: MenuComponent
-  }
+
 ];
 
 @NgModule({
