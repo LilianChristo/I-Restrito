@@ -42,47 +42,56 @@
   <br>
   <ng-container class="container">
 
-      <div class ="row">
-        <div *ngFor="let produto of listaProdutos.content | paginate: {itemsPerPage: 5, currentPage: paginaAtual}; let i = index" class="col-4">
-                <div class="center">
-                    <img class="Foto"
-                        [src]="produto.foto" [alt]="produto.nome" height="90" width="90" style=border-radius:300px>
-                    <p></p>
-                    <!-- Lixeira -->
-                    <button class="btn btn-outline btn-sm" class="btn"  (click)=onDeleteById(produto.id) routerLink="produto"  style="color:#3D6157">
-                      <svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z">
-                            </path>
+    <div class="row">
+      <div
+        *ngFor="let produto of listaProdutos.content | paginate: {itemsPerPage: 9, currentPage: paginaAtual} let i = index"
+        class="col-4">
+        <div class="center">
+          <img class="Foto" [src]="produto.foto" [alt]="produto.nome" height="90" width="90" style=border-radius:300px>
+          <p></p>
+          <!-- Lixeira -->
+          <button class="btn btn-outline btn-sm" class="btn" (click)=openPopup() style="color:#3D6157">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+              viewBox="0 0 16 16">
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z">
+              </path>
+              <path fill-rule="evenodd"
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z">
+              </path>
+            </svg>
+          </button>
+          <!-- Edição -->
+          <button class="btn-outline btn-sm" class="btn" (click)=onEditById(produto.id) style="color:#3D6157">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+              <path fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg>
+          </button>
+          <div class="texto">
+            <p>
+            <h5>{{produto.nome}} | {{produto.marca}}</h5>
+            <p> Tipo de Restrição: {{produto.restricao}}</p>
+            <p> Origem: {{produto.origem}}</p>
+            <p> Tipo de Produto: {{produto.tipoProduto}}</p>
+            <p> Descrição: {{produto.descricao}}</p>
+            <hr class="line2" size="4">
 
-                            <path fill-rule="evenodd"
-                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z">
-                            </path>
-                        </svg>
-                    </button>
-                    <!-- Edição -->
-                    <button class="btn-outline btn-sm" class="btn" (click)=onEditById(produto.id) style="color:#3D6157">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-pencil-square" viewBox="0 0 16 16">
-                            <path
-                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                            <path fill-rule="evenodd"
-                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                        </svg>
-                       
-                    </button>
-                    <div class="texto">
-                        <p>
-                        <h5>{{produto.nome}} | {{produto.marca}}</h5>
-                        <p> {{produto.descricao}}</p>
-                        <hr class="line2" size="4">
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"> </h4>
+              </div>
+              <div class="modal-body">
+                <p>Tem certeza que deseja remover esse produto?</p>
+
+              </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=closePopup()>
                   Não
@@ -102,5 +111,8 @@
 
 
 
-    </ng-container>
-    <pagination-controls (pageChange)= "paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </ng-container>
+  <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+  </pagination-controls>
+
+
