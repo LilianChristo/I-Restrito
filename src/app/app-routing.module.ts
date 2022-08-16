@@ -1,3 +1,4 @@
+import { FormReceitasComponent } from './pages/receitas/form-receitas/form-receitas.component';
 import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormUsuarioComponent } from './pages/usuario/form-usuario/form-usuario.component';
 import { Menu2Component } from './pages/menu2/menu2.component';
@@ -42,6 +43,9 @@ const routes: Routes = [
   },
   {
     path: 'listReceita', component: ListaReceitasComponent
+  },
+  {
+    path: 'FormReceita', component: FormReceitasComponent
   },
 
 ];
