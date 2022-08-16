@@ -1,4 +1,3 @@
-import { AdicionarReceita } from './pages/receitas/adicionar-receitas/adicionar-receita';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -44,9 +43,10 @@ import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-pr
     FormProdutosComponent,
     AdicionarProdutoComponent,
     Menu2Component,
-    MensagemComponent
+    MensagemComponent,
     EditaProdutosComponent,
 
+    
 
 
   ],
@@ -56,7 +56,8 @@ import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-pr
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    NgxPaginationModule,
+    
 
 
   ],

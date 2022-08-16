@@ -1,6 +1,4 @@
-import { InicioReceitasComponent } from './pages/receitas/adicionar-receitas/inicio-receitas/inicio-receitas.component';
-import { FormReceitasComponent } from './pages/receitas/form-receitas/form-receitas.component';
-import { AdicionarReceitasComponent } from './pages/receitas/adicionar-receitas/adicionar-receitas.component';
+import { ListaReceitasComponent } from './pages/receitas/lista-receitas/lista-receitas.component';
 import { FormUsuarioComponent } from './pages/usuario/form-usuario/form-usuario.component';
 import { Menu2Component } from './pages/menu2/menu2.component';
 import { LoginComponent } from './pages/usuario/login/login.component';
@@ -10,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdicionarProdutoComponent } from './pages/produtos/adicionar-produtos/adicionar-produtos.component';
 import { ListaProdutosComponent } from './pages/produtos/lista-produtos/lista-produtos.component';
 import { FormProdutosComponent } from './pages/produtos/form-produtos/form-produtos.component';
+import { EditaProdutosComponent } from './pages/produtos/edita-produtos/edita-produtos.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 const routes: Routes = [
   {
@@ -33,18 +33,19 @@ const routes: Routes = [
   },
   {
     path: '1produto', component: FormProdutosComponent
-  }
-  {
-    path: '1produto', component: AdicionarReceitasComponent
   },
-  {
-    path: 'receitaInicio', component: InicioReceitasComponent
-  },
-
   {
     path: 'produto/editar/:id', component: EditaProdutosComponent
+  },
+  {
+    path: 'menu', component: MenuComponent
+  },
+  {
+    path: 'listReceita', component: ListaReceitasComponent
+  },
+  {
+    path: 'menu', component: MenuComponent
   }
-
 ];
 
 @NgModule({
