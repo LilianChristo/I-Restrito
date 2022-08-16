@@ -15,16 +15,22 @@ export class EditaProdutosService {
   constructor(private http: HttpClient) { }
   produto!: RecuperaProduto;
 
+
+
   listarProdutoPorId(id: number): Observable<RecuperaProduto> {
     return this.http.get<RecuperaProduto>(`${API}/produto/${id}`);
   }
   
   editaProduto(editaProduto: EditaProdutos) {
     const formData = new FormData();
-    for (const [key, value] of Object.entries(editaProduto)) {
-      formData.append(key, value);
-    }
-
-    return this.http.put('http://localhost:8080/api/v1/produto', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+    for (const [key, value] of Object.entries(editaProduto)){
+      formData.append(key, value); 
   }
+
+  return this.http.put(`${API}/produto/${editaProduto.id}`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
 }
+}
+
+
+
+

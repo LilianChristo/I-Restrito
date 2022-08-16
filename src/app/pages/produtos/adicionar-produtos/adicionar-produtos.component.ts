@@ -26,7 +26,7 @@ export class AdicionarProdutoComponent implements OnInit {
         Validators.required, Validators.minLength(5), Validators.maxLength(50)
       ]],
       descricao: ['', [
-        Validators.required, Validators.minLength(5), Validators.maxLength(50)
+        Validators.required, Validators.minLength(5), Validators.maxLength(250)
       ]],
       restricao: ['', [
         Validators.required
