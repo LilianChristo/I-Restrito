@@ -46,7 +46,7 @@
   <br>
   <div class="container">
 
-    <div class="row">
+    <ng-container class="container">
       <div
         *ngFor="let produto of listaProdutos.content | paginate: {itemsPerPage: 9, currentPage: paginaAtual} let i = index"
         class="col-4">
@@ -84,40 +84,38 @@
             <p> Descrição: {{produto.descricao}}</p>
             <hr class="line2" size="4">
 
-                        
           </div>
         </div>
-      </div>
-    </div>
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"> </h4>
+              </div>
+              <div class="modal-body">
+                <p>Tem certeza que deseja remover esse produto?</p>
 
-
-
-    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title"> </h4>
-          </div>
-          <div class="modal-body">
-            <p>Tem certeza que deseja remover esse produto ?</p>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=closePopup()>
-              Não
-            </button>
-            <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=onDeleteById()>
-              Sim 
-            </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=closePopup()>
+                  Não
+                </button>
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=onDeleteById(produto.id)>
+                  Sim
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
+
       </div>
-    </div>
 
 
 
 
-  </div>
+
+  </ng-container>
   <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
   </pagination-controls>
 
