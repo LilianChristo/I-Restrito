@@ -25,12 +25,13 @@
 
 .row{
 
-    margin-left: 10cm;
+    margin-left: 4cm;
     position: relative;
 }
 
 .column{
     position: relative;
+    margin-left: 10px;
     background-color: #e9cd9e;
     opacity: 1;
     width: 38%;
@@ -49,6 +50,7 @@
 
 .column2{
     position: relative;
+    margin-left: 10px;
     background-color: white;
     opacity: 1;
     float: left;
@@ -109,6 +111,41 @@
     font-size: 20px;
     color:#334646;
 }
+
+.btn-3d {
+
+    position: relative;
+    top: 6px;
+    border:3;
+    transition: all 40ms linear;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+  
+  }
+  
+  .btn-3d:active:focus,
+  .btn-3d:focus:hover,
+  .btn-3d:focus {
+    outline: mediun none;
+  }
+  
+  .btn-3d:active,
+  .btn-3d.active {
+    top: 2px;
+  }
+  
+  .bi {
+      margin-left: 10px ;
+      margin-top: -10px;
+      color:#334646;
+  }
+
+  .sintomas{
+    position: center;
+   
+  }
+
 
 
 
