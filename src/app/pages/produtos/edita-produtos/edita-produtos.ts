@@ -4,6 +4,7 @@ enum Restricao {
 
 export interface EditaProdutos {
 
+    id: number;
     nome: string;
     descricao: string;
     restricao: Restricao;
