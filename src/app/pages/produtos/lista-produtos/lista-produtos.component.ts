@@ -15,7 +15,10 @@ export class ListaProdutosComponent implements OnInit {
   listaProdutos!: ListaProdutos;
   produto!: Produto;
 
-  constructor(private produtosService: ListarProdutosService, private router: Router, route: ActivatedRoute) {
+  constructor(
+    private produtosService: ListarProdutosService, 
+    private router: Router, route: ActivatedRoute,
+    ) {
 
   }
 
@@ -31,11 +34,31 @@ export class ListaProdutosComponent implements OnInit {
 
 
   onDeleteById(id: number): void {
-    this.produtosService.deletarProdutoPorId(id).subscribe(produto => {
-      this.produto = produto;
-      console.log(produto);
-    })
+    this.produtosService.deletarProdutoPorId(id).subscribe( {
+      next: (v) => {
+        alert("Produto excluído com sucesso!")
+        this.refresh();
+      },
+      error: (e) => alert('Tente novamente'),
+      complete: () => console.log('complete'),
+    });
+    this.closePopup();
+
   }
+
+
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { RecuperaProduto } from './edita-produtos';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EditaProdutos, RecuperaProduto } from './edita-produtos';
 import { EditaProdutosService } from './edita-produtos.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class EditaProdutosComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: EditaProdutosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class EditaProdutosComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = params['id'];
       console.log(id);
-      const produto = this.service.listarProdutoPorId(id).subscribe(produto => {
+      this.service.listarProdutoPorId(id).subscribe(produto => {
         registro = produto; this.recuperaProdutos(produto);
       });
     }
@@ -67,9 +68,27 @@ export class EditaProdutosComponent implements OnInit {
       origem: produto.origem,
       marca: produto.marca,
       tipoProduto: produto.tipoProduto,
-      imagem: produto.foto,
+      
     });
   }
+
+  editar() {
+
+    this.route.params.subscribe(params => {
+      if (this.formProdutoForm.valid) {
+        const produtoEditado = this.formProdutoForm.getRawValue() as EditaProdutos;
+        this.service.editaProduto(produtoEditado).subscribe({
+          next: (v) => {
+            alert('Produto editado com sucesso!')
+            this.router.navigate(['/produto']);
+          },
+          error: (e) => alert('Tente novamente'),
+          complete: () => console.info('complete')
+        });
+      }
+    })
+  }
+
 
 
 
@@ -77,3 +96,4 @@ export class EditaProdutosComponent implements OnInit {
     this.formProdutoForm.controls["imagem"].setValue(e.target.files[0]);
   }
 }
+

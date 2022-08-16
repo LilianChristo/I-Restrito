@@ -1,16 +1,16 @@
 <app-header></app-header>
 
 <head>
-  <title>produto</title>
+  <title>Edita produto</title>
 </head>
 
 <body>
   <br>
-  <div class="titulo">Cadastrar Produto</div>
+  <div class="titulo">Editar Produto</div>
   <br>
   <section>
     <form name="editaProduto" class="justify-content-center d-flex" [formGroup]="formProdutoForm"
-      method="post" action="#">
+      (submit)="editar()" method="put" action="#">
       <div class="row w-50">
         <div class="col-12 mb-3">
           <label for="restricao" class="textform">Tipo de restrição</label>
@@ -74,7 +74,6 @@
           <button type="button" class="btn btn-secondary btn-lg" type="submit">
             Editar
           </button>
-          
         </div>
       </div>
       <br>
