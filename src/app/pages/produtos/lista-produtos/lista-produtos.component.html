@@ -46,7 +46,7 @@
   <br>
   <div class="container">
 
-    <ng-container class="container">
+    <div class="row">
       <div
         *ngFor="let produto of listaProdutos.content | paginate: {itemsPerPage: 9, currentPage: paginaAtual} let i = index"
         class="col-4">
@@ -100,7 +100,7 @@
                 <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=closePopup()>
                   Não
                 </button>
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=onDeleteById(produto.id)>
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)=onDeleteById()>
                   Sim
                 </button>
               </div>
@@ -110,12 +110,13 @@
 
 
       </div>
+      
 
 
 
 
 
-  </ng-container>
+    </div>
   <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
   </pagination-controls>
 
