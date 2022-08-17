@@ -19,11 +19,32 @@
 
 .cadastrar{
     margin: 2% 0% 0% 2%;
+    margin-left: 3%;
 }
 
 .bi-arrow-return-left{
     margin: 20px;
 }
+
+.center{
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    opacity: 1;
+    padding: 25px;
+    height: 500px;
+    width: 85%;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formulario{
+    margin: 2% 0% 0% 2%;
+    margin-left: 3%;
+
+}
+
 
 
 
