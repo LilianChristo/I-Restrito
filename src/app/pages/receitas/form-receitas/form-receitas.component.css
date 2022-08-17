@@ -1,6 +1,4 @@
 .topo{
-
-   
     position: relative;
     text-align: center;
 }
@@ -16,7 +14,7 @@
     color: white;
     background-color: #3d6157;
     border: #e9cd9e;
-    width: 500px;
+    width: 400px;
     height: 100px;  
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #e9cd9e;
     
@@ -61,22 +59,11 @@
 
 }
 
-.img{
-
-    border-radius: 50%;
-}
-
-.img2{
-
-    border-radius: 50%;
-   
-}
-
 .form-check-inline{
 
     color:#3d6157;
     position: relative;
-    font-size: 35px;
+    font-size: 25px;
     margin-left: 0px;
     text-align: justify;
     
@@ -92,7 +79,53 @@
 
 }
 
-.imgbox {
 
-    margin-top: -30px;
-}
+
+.carousel{
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #e9cd9e;
+    margin-left: 500px;
+    width: 500px;
+    height: 300px; 
+    
+    }
+    
+    .h5{
+        margin-bottom: 230px;
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: -60px;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        /* padding: 0; */
+        /* margin-right: 15%; */
+        /* margin-bottom: 1rem; */
+        margin-left: 15%;
+        list-style: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
